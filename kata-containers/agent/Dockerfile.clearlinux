@@ -1,0 +1,4 @@
+FROM clearlinux/golang
+
+RUN swupd bundle-add make c-basic git
+
