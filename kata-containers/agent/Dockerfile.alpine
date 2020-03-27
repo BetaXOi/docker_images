@@ -1,4 +1,15 @@
 FROM golang:1.11.10-alpine
 
-RUN apk update && apk add make gcc libc-dev linux-headers git
+RUN apk update && apk add \
+    openssh \
+    git \
+    make \
+    bash \
+    gcc \
+    musl-dev \
+    linux-headers \
+    apk-tools-static \
+    libseccomp \
+    libseccomp-dev \
+    curl
 
