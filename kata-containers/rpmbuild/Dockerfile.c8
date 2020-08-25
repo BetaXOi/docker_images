@@ -1,0 +1,9 @@
+FROM centos:8
+
+ARG GO_VERSION=1.12.3
+ENV GOPATH=/go
+
+RUN curl -L https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz |tar -xzC /usr/lib
+RUN ln -sf /usr/lib/go/bin/go /usr/bin/go && ln -sf /usr/lib/go/bin/gofmt /usr/bin/gofmt
+
+RUN yum install -y gcc gcc-c++ libtool libtool-ltdl make git pkgconfig automake autoconf rpm-build
